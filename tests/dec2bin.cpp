@@ -32,6 +32,7 @@ void decimalToBinary(int arr [nbre_lignes][1], int nbre_lignes)
             }
             cout << endl ;
         }
+        // trvaizdfreger
 
             /*// Conversion de chaque valeur décimale en binaire
             for (int i = 0; i < nbre_lignes; i++) {
