@@ -5,9 +5,10 @@ using namespace std;
 
 // Fonction pour convertir un nombre décimal en binaire
 
-void binarytodecimal(int array_binary [][8], int nombre_lignes) 
+void binarytodecimal(int array_binary [nbre_lignes][8], int nombre_lignes) 
 {
 
+     int array_decimal [nbre_lignes][];
     
      for (int i = 0; i < nombre_lignes; i++)
      {
