@@ -1,66 +1,46 @@
 #include <iostream>
 using namespace std;
 
-// Fonction pour convertir un nombre décimal en binaire
-
-void decimalToBinary(int arr [nbre_lignes][1], int nbre_lignes) 
+// Fonction pour convertir un tableau de nombres décimaux en binaire
+void decimalToBinary(int arr[][1], int nbre_lignes) 
 {
-     /*int size = 4;*/ // Taille du tableau
+    int array_binary[nbre_lignes][8] = {0}; // on met le tableau 0 pour etre sur qu'il ne contient pas de valeur à l'intérieur.
 
-    int array_binary[nbre_lignes][8]; // Tableau pour stocker le résultat binaire.
+    for (int i = 0; i < nbre_lignes; i++)
+    {
+        int poids = 7; // ici on initialise le poids
+        int valeur_decimal = arr[i][0]; // Récupérer la valeur décimale
 
-        for (int i =0; i< nbre_lignes; i++)
+        while (valeur_decimal > 0)
         {
-            int index = 7 ; // etant donné on commence à 0 donc {0,1,2,3,4,5,6,7}
-            int num = arr[i][0]; // on initialise la premiere valeur du tableau pris en paramètre.
-
-            while (num > 0)
-            {
-                array_binary [i][index] = num % 2 ;
-                num /= 2;
-                index --; 
-            }
-
+            array_binary[i][poids] = valeur_decimal % 2; // Calcul du bit de poids faible
+            valeur_decimal /= 2; // Division par 2
+            poids--; // Aller au bit suivant mais de la droite vers la gauche
         }
-        // affichage
+    }
 
-        for (int i = 0; i < nbre_lignes; i++)
+    // Affichage des résultats
+    //cout << "Conversion des nombres décimaux en binaire :\n";
+    for (int i = 0; i < nbre_lignes; i++)
+    {
+        for (int j = 0; j < 8; j++)
         {
-            for (int j = 0; j < 8; j++)
-            {
-                cout << array_binary[i][j] ;
-            }
-            cout << endl ;
+            cout << array_binary[i][j];
         }
-
-            /*// Conversion de chaque valeur décimale en binaire
-            for (int i = 0; i < nbre_lignes; i++) {
-                int num = arr[i][0]; // Nombre actuel à convertir
-                int index = 0;
-
-                // Conversion en binaire
-                while (num > 0) {
-                    array_binary[index] = num % 2; // Récupérer le bit de poids faible
-                    num /= 2;                      // Diviser par 2
-                    index++;
-                }
-
-
-                // Affichage du résultat en ordre inverse
-                //cout << "Valeur " << arr[i] << " en binaire : ";
-                for (int j = index - 1; j >= 0; j--) {
-                    cout << array_binary[i][j];
-                }
-                cout << endl;*/
-    
+        cout << endl;
+    }
 }
 
 
-
+// pour tester la fonction 
 /*int main() 
 {
-    int nbre_lignes= 4
-    int 
-     decimalToBinary(arr);
+    // Définir un tableau de nombres décimaux à convertir
+    int nbre_lignes = 4; // Nombre de lignes dans le tableau
+    int arr[4][1] = { {13}, {45}, {7}, {128} }; // Nombres à convertir en binaire
+    
+    // Appeler la fonction pour effectuer la conversion
+    decimalToBinary(arr, nbre_lignes);
+
     return 0;
-}*/
+}

@@ -1,0 +1,24 @@
+#include <opencv2/opencv.hpp>
+#include <iostream>
+
+int main() {
+    // Créer une matrice OpenCV (tableau binaire)
+    cv::Mat tableauBinaire = (cv::Mat_<uchar>(3, 4) << 1, 0, 1, 0,
+                                                        1, 1, 0, 0,
+                                                        1, 1, 1, 1);
+
+    // Transformer la matrice en une seule colonne
+    cv::Mat colonneUnique = tableauBinaire.reshape(1, tableauBinaire.rows * tableauBinaire.cols);
+
+    // Afficher la matrice colonne unique
+    std::cout << "Colonne unique (affichée ligne par ligne) : " << std::endl;
+    for (int i = 0; i < colonneUnique.rows; i++) 
+    {
+        std::cout << (int)colonneUnique.at<uchar>(i, 0) << std::endl; // Chaque élément vertical
+    }
+
+    // Afficher les dimensions pour vérifier
+    std::cout << "Dimensions de colonneUnique : " << colonneUnique.rows << " x " << colonneUnique.cols << std::endl;
+
+
+}
