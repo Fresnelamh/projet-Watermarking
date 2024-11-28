@@ -97,7 +97,33 @@ cout << "Image reconstruite et sauvegardée avec succès : image_finale.jpg" << 
 
 
 
-   
+/*
+
+
+cout<<"Extraction de l'image cachée" <<endl;
+cout<< "1:Oui"<<endl;
+cout<< "2:Non"<<endl;
+int choice
+cout<<"Veuillez choisir entre 1 et 2 : "
+cin >>choice;
+
+if (choice==1){
+    //Récupérer les deux images
+    //Les transformer en tableaux binaires
+    //Transformer l'image censée être cachée en colonne unique 
+    //Appeler a fontion d'extraction et de redimensionnement
+    //Reconstruire l'image cachée
+
+}
+
+else if (choice==2) {
+    //Ne rien extraire
+}
+
+else if (choice==3) {
+    cout<<"Veuillez entrer un choix valide"<<endl;
+}
+   */
     return 0;
 
 }
