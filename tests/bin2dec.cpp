@@ -41,8 +41,8 @@ vector<int> binaryToDecimal(const Mat& binaryMatrix) {
 
 
 
-/*
-int main()
+
+/* int main()
 {
      // Définir un tableau binaire à convertir en décimal
 
@@ -57,4 +57,5 @@ int main()
 
           return 0;
      
-}
+} */
+
